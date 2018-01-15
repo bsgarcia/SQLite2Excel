@@ -77,10 +77,10 @@ class ConverterWindow(QtWidgets.QWidget):
     def set_save_path(self):
 
         # get file extension
-        check_extension = self.file_path.split(".")[-1]
+        check_extension = self.file_path.split(".")
 
         extension = \
-            check_extension if isinstance(check_extension, list) else None
+            check_extension[-1] if isinstance(check_extension, list) else None
 
         if extension in ["db", "sqlite", "sqlite3", "db3"]:
 
